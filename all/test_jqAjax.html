@@ -1,0 +1,19 @@
+<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<div id="a">123</div>
+<script type="text/javascript">
+//console.log($("#a").prop("innerHTML"));
+var data = {
+  "fname":1,
+  "b":2
+};
+var sss = 'data';
+$.post("demo.php",{data:data},function(data){
+  console.log(data);
+},'json')
+</script>
+<input id="console" type="button" value="123123" />
+<script type="text/javascript">
+  $("#console").click(function(){
+    
+  });
+</script>

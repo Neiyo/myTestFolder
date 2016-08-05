@@ -1,0 +1,1127 @@
+<#assign bath = request.contextPath>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="${bath}/static/css/g.css"/>
+    <link rel="stylesheet" type="text/css" href="${bath}/static/css/xcConfirm.css"/>
+    <link rel="stylesheet" type="text/css" href="${bath}/static/css/jquery.datetimepicker.css"/>
+    <script type="text/javascript" src="${bath}/static/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="${bath}/static/js/xcConfirm.js"></script>
+    <script type="text/javascript" src="${bath}/static/js/common.js"></script>
+    <title>无标题文档</title>
+    <style type="text/css">
+        .sum{
+            width:100%;
+            height:50px;
+            line-height:50px;
+            background:#fcfce1;
+            margin-left:20px;
+            margin-top:20px;
+            padding-left:30px;
+        }
+        .accountSearch{
+            width:1200px;
+            height:150px;
+            margin-left:20px;
+            margin-top:20px;
+            font-size: 12px;
+        }
+        .accountSearch li{
+            width:300px;
+            height:40px;
+            line-height:40px;
+            float:left;
+            margin:10px 0px;
+        }
+        .accountSearch li input{
+            width:150px;
+            height:42px;
+            border:1px solid #ccc;
+            background:#FFF;
+        }
+        .accountSearch li span{
+            display:inline-block;
+            width:80px;
+            height:42px;
+            text-align:center;
+            background:#e4e4e4;
+            line-height:40px;
+            border:1px solid #ccc;
+
+        }
+        #accSearch{
+            width:80px;
+            height:42px;
+            background:#0099ff;
+            color:#FFF;
+            border:1px solid transparent;
+        }
+        #accSearch:hover{
+            border:1px solid #f0aa39;
+            color:#f0aa39;
+        }
+        #accExport{
+            width:120px;
+            height:42px;
+            background:#6699ff;
+            color:#FFF;
+            border:1px solid transparent;
+            margin-left:30px;
+        }
+        #accExport:hover{
+            border:1px solid #f0aa39;
+            color:#f0aa39;
+        }
+        #accChooseExport{
+            width:120px;
+            height:42px;
+            background:#6699ff;
+            color:#FFF;
+            border:1px solid transparent;
+            margin-left:30px;
+        }
+        #accChooseExport:hover{
+            border:1px solid #f0aa39;
+            color:#f0aa39;
+        }
+
+
+        .accountTable{
+            width:1600px;
+            height:auto;
+            margin-left:20px;
+        }
+        .accountTable ul{
+            width:1000px;
+            height:30px;
+        }
+        .accountTable ul li{
+            float:left;
+            width:60px;
+            height:28px;
+            line-height:30px;
+            background:#f2f2f2;
+            border:1px solid #d7d7d7;
+            text-align:center;
+            margin-right:-1px;
+            cursor:pointer;
+        }
+        .accountTable ul li.accOn{
+            background:#c5c5c5;
+            border:1px solid #c5c5c5;
+
+        }
+        .account_Table{
+            width:1600px;
+        }
+        .account_Table abbr{
+            display:inline-block;
+            width:60px;
+            height:20px;
+            line-height:20px;
+            text-align:center;
+            background:#ff3300;
+            color:#FFF;
+            border-radius:5px;
+            margin-top:30px;
+            border:1px solid transparent;
+
+        }
+        .account_Table a,i{
+            color:#0099ff;
+            padding:0px 5px;
+            cursor:pointer;
+
+        }
+        .account_Table abbr:hover{
+            color:#f2b95d;
+            border:1px solid #f2b95d;
+        }
+
+        .detailOne{
+            width:800px;
+            height:auto;
+            position:absolute;
+            left:15%;
+            top:5%;
+            border:1px solid #ccc;
+            border-radius:5px;
+            box-shadow:2px 2px 2px 2px #999;
+            background:#FFF;
+            z-index:2;
+            display:none;
+        }
+        .detailImg li{
+            float:left;
+            width:200px;
+            height:150px;
+            text-align:center;
+            line-height:60px;
+            margin-right:-1px
+        }
+        .detailOne ul.checkDetailOne{
+            width:760px;
+            height:auto;
+            overflow:hidden;
+            border:1px solid #CCC;
+            margin-left:20px;
+        }
+        .checkDetailOne dd.dt{
+            width:740px;
+            padding:10px;
+            font-size:18px;
+            font-weight:bold;
+            border-bottom:1px solid #E4E4E4;
+            margin-bottom:10px;
+            color:#333;
+        }
+        .checkDetailOne dd{
+            width:360px;
+            float:left;
+            padding:5px 0px 5px 10px;
+        }
+        .Purchase_table{
+            margin-bottom:50px;
+        }
+        .Purchase_table td,th{
+            border:1px solid #E4E4E4;
+        }
+        #xxOne{
+            display:inline-block;
+            width:25px;
+            height:25px;
+            background:url(${bath}/static/img/XX.png) center no-repeat;
+            position:relative;
+            left:500px;
+            top:10px;
+            cursor:pointerl;
+        }
+        /*网点代客下单*/
+        .detailTwo{
+            width:800px;
+            height:auto;
+            position:absolute;
+            left:15%;
+            top:5%;
+            border:1px solid #ccc;
+            border-radius:5px;
+            box-shadow:2px 2px 2px 2px #999;
+            background:#FFF;
+            z-index:2;
+            display:none;
+        }
+        .detailImg li{
+            float:left;
+            width:200px;
+            height:150px;
+            text-align:center;
+            line-height:60px;
+            margin-right:-1px
+        }
+        .detailTwo ul.checkDetailTwo{
+            width:760px;
+            height:auto;
+            overflow:hidden;
+            border:1px solid #CCC;
+            margin-left:20px;
+        }
+        .checkDetailTwo dd.dt{
+            width:740px;
+            padding:10px;
+            font-size:18px;
+            font-weight:bold;
+            border-bottom:1px solid #E4E4E4;
+            margin-bottom:10px;
+            color:#333;
+        }
+        .checkDetailTwo dd{
+            width:360px;
+            float:left;
+            padding:5px 0px 5px 10px;
+        }
+        .Purchase_table{
+            margin-bottom:50px;
+        }
+        .Purchase_table td,th{
+            border:1px solid #E4E4E4;
+        }
+        #xxTwo{
+            display:inline-block;
+            width:25px;
+            height:25px;
+            background:url(${bath}/static/img/XX.png) center no-repeat;
+            position:relative;
+            left:500px;
+            top:10px;
+            cursor:pointerl;
+        }
+
+
+        /*用户自己下单*/
+        .detailThree{
+            width:800px;
+            height:auto;
+            position:absolute;
+            left:15%;
+            top:5%;
+            border:1px solid #ccc;
+            border-radius:5px;
+            box-shadow:2px 2px 2px 2px #999;
+            background:#FFF;
+            z-index:2;
+            display:none;
+        }
+        .detailImg li{
+            float:left;
+            width:200px;
+            height:150px;
+            text-align:center;
+            line-height:60px;
+            margin-right:-1px
+        }
+        .detailThree ul.checkDetailThree{
+            width:760px;
+            height:auto;
+            overflow:hidden;
+            border:1px solid #CCC;
+            margin-left:20px;
+        }
+        .checkDetailThree dd.dt{
+            width:740px;
+            padding:10px;
+            font-size:18px;
+            font-weight:bold;
+            border-bottom:1px solid #E4E4E4;
+            margin-bottom:10px;
+            color:#333;
+        }
+        .checkDetailThree dd{
+            width:360px;
+            float:left;
+            padding:5px 0px 5px 10px;
+        }
+        .Purchase_table{
+            margin-bottom:50px;
+        }
+        .Purchase_table td,th{
+            border:1px solid #E4E4E4;
+        }
+        #xxThree{
+            display:inline-block;
+            width:25px;
+            height:25px;
+            background:url(${bath}/static/img/XX.png) center no-repeat;
+            position:relative;
+            left:500px;
+            top:10px;
+            cursor:pointerl;
+        }
+
+        /*网点自提代客*/
+        .detailFour{
+            width:800px;
+            height:auto;
+            position:absolute;
+            left:15%;
+            top:5%;
+            border:1px solid #ccc;
+            border-radius:5px;
+            box-shadow:2px 2px 2px 2px #999;
+            background:#FFF;
+            z-index:2;
+            display:none;
+        }
+        .detailImg li{
+            float:left;
+            width:200px;
+            height:150px;
+            text-align:center;
+            line-height:60px;
+            margin-right:-1px
+        }
+        .detailFour ul.checkDetailFour{
+            width:760px;
+            height:auto;
+            overflow:hidden;
+            border:1px solid #CCC;
+            margin-left:20px;
+        }
+        .checkDetailFour dd.dt{
+            width:740px;
+            padding:10px;
+            font-size:18px;
+            font-weight:bold;
+            border-bottom:1px solid #E4E4E4;
+            margin-bottom:10px;
+            color:#333;
+        }
+        .checkDetailFour dd{
+            width:360px;
+            float:left;
+            padding:5px 0px 5px 10px;
+        }
+        .Purchase_table{
+            margin-bottom:50px;
+        }
+        .Purchase_table td,th{
+            border:1px solid #E4E4E4;
+        }
+        #xxFour{
+            display:inline-block;
+            width:25px;
+            height:25px;
+            background:url(${bath}/static/img/XX.png) center no-repeat;
+            position:relative;
+            left:500px;
+            top:10px;
+            cursor:pointerl;
+        }
+
+        /*网点自提用户自主下单*/
+
+
+        .arrow{
+            display: inline-block;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            width: 36px;
+            height: 36px;
+            background:url(${bath}/static/img/com_btn_arrow_black_down.png) center no-repeat;
+        }
+        .accountSearch li dl{
+            display: inline-block;
+            vertical-align: middle;
+            width:120px;
+            height:42px;
+            margin-left:-6px;
+            border:1px solid #ccc;
+            background:#f8f8f8;
+            text-align: center;
+            position: relative;
+        }
+        .accountSearch li dl dd,dt{
+            width:120px;
+            height:42px;
+            border:1px solid #ccc;
+            background:#f8f8f8;
+            margin-top: -1px;
+            margin-left:-1px;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .accountSearch li dl dd{
+            display: none;
+        }
+        .accountSearch li dl dd:hover{
+            color: #24b35f;
+        }
+        .accountSearch li dl dd:active{
+            color: #fff;
+            background: #24b35f;
+        }
+
+        .returnListMoney{
+            width: 680px;
+            height: auto;
+            overflow: hidden;
+            font-size: 14px;
+            position: absolute;
+            left: 15%;
+            top: 15%;
+            background: #fff;
+            display: none;
+        }
+        .returnListMoney h1{
+            width: 680px;
+            height: 50px;
+            border-bottom: 1px solid #dcdcdc;
+        }
+        .returnListMoney h1 span{
+            margin-top: 30px;
+            font-size: 24px;
+            margin-left: 20px;
+        }
+        .returnListMoney h1 i{
+            display: inline-block;
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+            margin-left: 630px;
+            margin-top: -25px;
+            background:url(${bath}/static/img/XX.png) center no-repeat;
+        }
+        .returnListMoney div.returnListMoneyTable{
+            width: 680px;
+            height: 110px;
+        }
+        .returnListMoney div.returnListMoneyTable dl{
+            width: 623px;
+            height: 65px;
+            margin-left: 30px;
+            margin-top: 20px;
+
+        }
+        .returnListMoney div.returnListMoneyTable dl dt{
+            width: 623px;
+            height: 30px;
+            background: #b3b3b3;
+            color: #fff;
+        }
+        .returnListMoney div.returnListMoneyTable dl dt abbr{
+            display: inline-block;
+            vertical-align: middle;
+            width: 88px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #dedede ;
+            margin-right: -4px;
+            text-align: center;
+            margin-left: -1px;
+        }
+        .returnListMoney div.returnListMoneyTable dl dd{
+            width: 623px;
+            height: 30px;
+            background: #fff;
+        }
+        .returnListMoney div.returnListMoneyTable dl dd abbr{
+            display: inline-block;
+            vertical-align: middle;
+            width: 88px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #dedede ;
+            margin-right: -4px;
+            text-align: center;
+            margin-left: -1px;
+        }
+        .returnListMoney div.returnListMoneyRate{
+            width: 680px;
+            height:auto;
+            overflow: hidden;
+        }
+        .returnListMoney div.returnListMoneyRate h2{
+            margin-left: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+        .returnListMoney div.returnListMoneyRate li{
+            width: 640px;
+            margin-left: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .returnListMoney div.returnListMoneyRate li span.returnListMoneyRateNote{
+            display: inline-block;
+            vertical-align: middle;
+            width: 200px;
+            height: auto;
+            overflow: hidden;
+            margin-top: -5px;
+        }
+        .returnListMoney div.returnListMoneyAction{
+            width: 680px;
+            height:auto;
+        }
+        .returnListMoney div.returnListMoneyAction span {
+            margin-left: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+        .returnListMoney div.returnListMoneyAction li{
+            margin: 10px 0px 10px 20px;
+        }
+        #returnListMoneyActionConfirm{
+            width: 90px;
+            height: 30px;
+            border-radius: 3px;
+            color: #fff;
+            background: #24b35f;
+            margin-left: 95px;
+            border: 1px solid transparent;
+        }
+        #returnListMoneyActionCancel{
+            width: 90px;
+            height: 30px;
+            border-radius: 3px;
+            background: #fff;
+            color: #999;
+            border: 1px solid #999;
+            margin-left: 30px;
+        }
+        #returnListMoneyActionConfirm:hover{
+            box-shadow: 0px 3px 3px 0px #999;
+        }
+        #returnListMoneyActionCancel:hover{
+            box-shadow: 0px 3px 3px 0px #999;
+        }
+        #returnListMoneyActionConfirm:active{
+            background: #008738;
+        }
+        #returnListMoneyActionCancel:active{
+            background: #008738;
+            color: #fff;
+        }
+
+
+
+
+
+        .returnListItem{
+            width: 900px;
+            height: auto;
+            overflow: hidden;
+            font-size: 14px;
+            position: absolute;
+            left: 15%;
+            top: 15%;
+            background: #fff;
+            display: none;
+        }
+        .returnListItem h1{
+            width: 900px;
+            height: 50px;
+            border-bottom: 1px solid #dcdcdc;
+        }
+        .returnListItem h1 span{
+            margin-top: 30px;
+            font-size: 24px;
+            margin-left: 20px;
+        }
+        .returnListItem h1 i{
+            display: inline-block;
+            vertical-align: middle;
+            width: 25px;
+            height: 25px;
+            margin-left: 830px;
+            margin-top: -25px;
+            background:url(${bath}/static/img/XX.png) center no-repeat;
+        }
+        .returnListItem div.returnListItemTable{
+            width: 900px;
+            height: 110px;
+        }
+        .returnListItem div.returnListItemTable dl{
+            width: 888px;
+            height: 65px;
+            margin-left: 10px;
+            margin-top: 20px;
+
+        }
+        .returnListItem div.returnListItemTable dl dt{
+            width: 888px;
+            height: 30px;
+            background: #b3b3b3;
+            color: #fff;
+        }
+        .returnListItem div.returnListItemTable dl dt abbr{
+            display: inline-block;
+            vertical-align: middle;
+            width: 110px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #dedede ;
+            margin-right: -4px;
+            text-align: center;
+            margin-left: -1px;
+        }
+        .returnListItem div.returnListItemTable dl dd{
+            width: 888px;
+            height: 30px;
+            background: #fff;
+        }
+        .returnListItem div.returnListItemTable dl dd abbr{
+            display: inline-block;
+            vertical-align: middle;
+            width: 110px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #dedede ;
+            margin-right: -4px;
+            text-align: center;
+            margin-left: -1px;
+        }
+        .returnListItem div.returnListItemRate{
+            width: 900px;
+            height:auto;
+            overflow: hidden;
+        }
+        .returnListItem div.returnListItemRate h2{
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #000;
+        }
+        .returnListItem div.returnListItemRate li{
+            width: 840px;
+            margin-left: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .returnListItem div.returnListItemRate li span.returnListItemRateNote{
+            display: inline-block;
+            vertical-align: middle;
+            width: 300px;
+            height: auto;
+            overflow: hidden;
+            margin-top: -5px;
+        }
+        .returnListItem div.returnListItemAction{
+            width: 900px;
+            height:auto;
+        }
+        .returnListItem div.returnListItemAction h2 {
+            margin-left: 20px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+        .returnListItem div.returnListItemAction li{
+            margin: 10px 0px 10px 20px;
+        }
+        .returnListItem div.returnListItemAction li span{
+            margin-left: 50px;
+
+        }
+        .returnListItem div.returnListItemAction li input{
+            width: 80px;
+        }
+        #returnListItemActionConfirm{
+            width: 90px;
+            height: 30px;
+            border-radius: 3px;
+            color: #fff;
+            background: #24b35f;
+            margin-left: 95px;
+            border: 1px solid transparent;
+        }
+        #returnListItemActionCancel{
+            width: 90px;
+            height: 30px;
+            border-radius: 3px;
+            background: #fff;
+            color: #999;
+            border: 1px solid #999;
+            margin-left: 30px;
+        }
+        #returnListItemActionConfirm:hover{
+            box-shadow: 0px 3px 3px 0px #999;
+        }
+        #returnListItemActionCancel:hover{
+            box-shadow: 0px 3px 3px 0px #999;
+        }
+        #returnListItemActionConfirm:active{
+            background: #008738;
+        }
+        #returnListItemActionCancel:active{
+            background: #008738;
+            color: #fff;
+        }
+
+        .returnListItem div.returnListItemTableTwo{
+            width: 900px;
+            height: 110px;
+        }
+        .returnListItem div.returnListItemTableTwo dl{
+            width: 880px;
+            height: 65px;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+        .returnListItem div.returnListItemTableTwo dl dt{
+            width: 880px;
+            height: 30px;
+            background: #b3b3b3;
+            color: #fff;
+        }
+        .returnListItem div.returnListItemTableTwo dl dt abbr{
+            display: inline-block;
+            vertical-align: middle;
+            width: 220px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #dedede ;
+            margin-right: -4px;
+            text-align: center;
+            margin-left: -1px;
+        }
+        .returnListItem div.returnListItemTableTwo dl dd{
+            width: 880px;
+            height: 30px;
+            background: #fff;
+        }
+        .returnListItem div.returnListItemTableTwo dl dd abbr{
+            display: inline-block;
+            vertical-align: middle;
+            width: 220px;
+            height: 30px;
+            line-height: 30px;
+            border:1px solid #dedede ;
+            margin-right: -4px;
+            text-align: center;
+            margin-left: -1px;
+        }
+        .returnListItem div.returnListItemOrderBefore ul h2{
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #000;
+        }
+        .returnListItem div.returnListItemOrderBefore ul{
+            width: 880px;
+            height: 140px;
+            border: 1px solid #dedede;
+            margin-left: 15px;
+        }
+        .returnListItem div.returnListItemOrderBefore ul li{
+            float: left;
+            margin: 10px 20px 0px 20px;
+            width: 350px;
+            height: 30px;
+        }
+        .returnListItem div.returnListItemlogistics h2{
+            margin-left: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #000;
+        }
+        .returnListItem div.returnListItemlogistics ul{
+
+            margin-left: 20px;
+        }
+        .returnListItem div.returnListItemlogistics ul li{
+            margin-top:10px;
+        }
+        .returnListItem div.returnListItemLeaveMessage{
+            margin: 20px 0px;
+            padding-left: 20px;
+        }
+        .returnListItem div.returnListItemLeaveMessage h2{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #000;
+        }
+        .returnListItem div.returnListItemLeaveMessage span{
+            display: inline-block;
+            vertical-align: middle;
+            width: 800px;
+            height: auto;
+            overflow: hidden;
+            margin-top: -5px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(e) {
+
+            $(document).on("click",".detailCheck",function(){
+                $(".returnListItem").fadeIn(500)
+            })
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+<div style="width:100%; height:100px; border-bottom:2px solid #dcdcdc; margin-left:20px;">
+	<span style="font:24px '黑体'; color:#000; display:inline-block; margin-top:15px; margin-bottom:20px;">订单管理
+    </span>
+    <br  />
+    订单管理
+</div>
+
+<div class="sum">
+    订单总金额：<span>13000</span>邮宝，其中现金：<span>3000</span>元，邮宝：<span>7000</span>邮宝
+</div>
+
+<div class="accountSearch">
+    <ul>
+        <li><span>退单号</span><input type="text" name="accountNum" /></li>
+        <li><span>手机号</span><input type="text" name="accountCust" /></li>
+        <li><span>订单号</span><input type="text" name="accountTel" /></li>
+        <li><span>退单状态</span>
+            <dl class="select"> <i value="0" class="arrow"></i>
+                <dt>全部</dt>
+                <dd>全部</dd>
+                <dd>退货申请</dd>
+                <dd>同意退货</dd>
+                <dd>拒绝退货</dd>
+                <dd>待收货</dd>
+                <dd>退货待退款</dd>
+                <dd>退货结束</dd>
+                <dd>审核退款</dd>
+                <dd>拒绝退款</dd>
+                <dd>退款待退货</dd>
+                <dd>已退款</dd>
+            </dl>
+        </li>
+        <li><span>退单开始时间</span><input type="date" name="accountPayBegDate" /></li>
+        <li><span>退单结束时间</span><input type="date" name="accountPayEndDate" /></li>
+        <li style="width:500px;">
+            <input type="button" value="搜索" id="accSearch" />
+            <input type="button" id="accChooseExport" value="导出退货订单" />
+        </li>
+    </ul>
+</div>
+
+<div class="accountTable">
+    <ul>
+        <li>全部订单</li>
+        <li>待付款</li>
+        <li>待发货</li>
+        <li>待收货</li>
+        <li>待提货</li>
+        <li>已完成</li>
+        <li>已取消</li>
+        <li class="accOn" style="margin-left:80px; width: 150px;">全部退单</li>
+    </ul>
+    <table style="z-index: -1;" role="none" class="account_Table" border="0" cellspacing="0" cellpadding="0">
+        <thead style="display:inline-block; width:1604px; height:40px; color:#FFF; margin-left:-2px; background:#c5c5c5; border:none;" >
+        <tr>
+            <th style="display:inline-block; width:0px; height:40px; overflow:hidden;">订单号</th>
+            <th style="display:inline-block; width:400px; height:40px; line-height:40px; border-style:none;">商品</th>
+            <th style="display:inline-block; width:80px; height:40px; line-height:40px; border-style:none;">金额/数量</th>
+            <th style="display:inline-block; margin-left:100px;margin-right:100px;width:80px; height:40px; line-height:40px; border-style:none;">收货人</th>
+            <th style="display:inline-block; width:250px; height:40px; line-height:40px; text-align:left; border-style:none;">退单时间</th>
+            <th style="display:inline-block; width:200px; height:40px; line-height:40px; text-align:left; border-style:none;">订单状态</th>
+            <th style="display:inline-block; width:200px; height:40px; line-height:40px; text-align:left; border-style:none;">退单金额</th>
+            <th style="display:inline-block; width:150px; height:40px; line-height:40px; text-align:left; border-style:none;">商家</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr style="display:inline-block; vertical-align:middle; width:1600px; height:160px; border:1px solid #ccc; margin-bottom:10px;">
+            <td style="display:inline-block; width:1550px; height:60px; text-align:left; background:#f6f6f6;height:60px; line-height:60px; padding-left:50px;border-bottom:1px solid #ccc;"><input name="accountNumberSelect" class="accountNumber" type="checkbox" />订单号：<span>201632114374039</span>
+                <div style="display:inline-block;margin-left: 1200px;"><a class="detailCheck">查看详情</a></div>
+            </td>
+            <td style="display:inline-block; width:400px; height:100px; line-height:100px; text-align:center; "><img src="${bath}/static/img/look.png" width="50" height="50" /></td>
+            <td style="display:inline-block; width:80px; height:100px;"><section style="margin-top:20px;">80邮宝<br />(&nbsp;<span>1</span>件&nbsp;)</section></td>
+            <td style="display:inline-block; width:250px; height:100px;"><section style="margin-top:20px;">用户名：<span>3408281991036841265</span><br />
+                收件人：<span>松涛</span><br />
+                联系电话：<span>18550442308</span><br /></section>
+            </td>
+            <td style="display:inline-block; width:250px; height:100px; padding:10px 0px;"><section style="margin-top:20px;">2016-03-20<br />8:40</section></td>
+            <td style="display:inline-block; width:200px; height:100px;"><abbr>代付款</abbr></td>
+            <td style="display:inline-block; width:200px; height:100px; line-height:80px;"><span>80邮宝</span></td>
+            <td style="display:inline-block; width:180px; height:100px; line-height:80px;"><span class="checkstate">物流单详情网点代客下单</span></td>
+        </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+<div class="returnListMoney">
+    <h1><span>查看详情</span> <i id="xx1"></i></h1>
+    <div class="returnListMoneyTable">
+        <dl>
+            <dt>
+                <abbr>退款原因</abbr>
+                <abbr>申请凭据</abbr>
+                <abbr>退款金额</abbr>
+                <abbr>退款明细</abbr>
+                <abbr>问题说明</abbr>
+                <abbr>上传凭证</abbr>
+                <abbr>退款状态</abbr>
+            </dt>
+            <dd>
+                <abbr>退款原因</abbr>
+                <abbr>申请凭据</abbr>
+                <abbr>退款金额</abbr>
+                <abbr>退款明细</abbr>
+                <abbr>问题说明</abbr>
+                <abbr>上传凭证</abbr>
+                <abbr>退款状态</abbr>
+            </dd>
+        </dl>
+    </div>
+    <div class="returnListMoneyRate">
+        <h2>退款进度</h2>
+        <ul>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListMoneyRateNote">给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言</span></abbr>
+            </li>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListMoneyRateNote">给顾客的留言</span></abbr>
+            </li>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListMoneyRateNote">给顾客的留言</span></abbr>
+            </li>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListMoneyRateNote">给顾客的留言</span></abbr>
+            </li>
+        </ul>
+    </div>
+    <div class="returnListMoneyAction">
+        <span>操作(重要)</span>
+        <ul>
+            <li><input style="margin-right: 10px;" type="radio" checked="checked">退款 </li>
+            <li><abbr style="position: relative; top: -40px;">给客户留言:</abbr><textarea style="margin-left: 20px;" rows="3" cols="30"></textarea></li>
+            <li>
+                <input id="returnListMoneyActionConfirm" type="button" value="保存">
+                <input id="returnListMoneyActionCancel" type="button" value="取消">
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="returnListItem" >
+    <h1><span>查看详情</span> <i id="xx2"></i></h1>
+    <div class="returnListItemTable">
+        <dl>
+            <dt>
+                <abbr>退款原因</abbr>
+                <abbr>申请凭据</abbr>
+                <abbr>退款金额(邮宝)</abbr>
+                <abbr>退款现金金额(元)</abbr>
+                <abbr>问题说明</abbr>
+                <abbr>上传凭证</abbr>
+                <abbr>商品返回方式</abbr>
+                <abbr>退款状态</abbr>
+            </dt>
+            <dd>
+                <abbr>退款原因</abbr>
+                <abbr>申请凭据</abbr>
+                <abbr>退款金额</abbr>
+                <abbr>退款明细</abbr>
+                <abbr>问题说明</abbr>
+                <abbr>上传凭证</abbr>
+                <abbr>退款状态</abbr>
+                <abbr>退款状态</abbr>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="returnListItemTableTwo">
+        <dl>
+            <dt>
+                <abbr>退货商品</abbr>
+                <abbr>商品货号</abbr>
+                <abbr>商城价</abbr>
+                <abbr>数量</abbr>
+            </dt>
+            <dd>
+                <abbr>退款原因</abbr>
+                <abbr>申请凭据</abbr>
+                <abbr>退款金额</abbr>
+                <abbr>退款明细</abbr>
+            </dd>
+        </dl>
+    </div>
+
+    <div class="returnListItemOrderBefore">
+
+        <ul>
+            <h2>原订单详情</h2>
+            <li>订单编号:<span>2131231231312</span></li>
+            <li>订单交易金额(含运费):<span>80.00</span>邮宝</li>
+            <li>支付明细(含运费):<span>80.00</span>邮宝+<span>30.00</span>元</li>
+            <li>运费:<span>10.00</span>邮宝</li>
+        </ul>
+    </div>
+
+    <div class="returnListItemRate">
+        <h2>操作日志</h2>
+        <ul>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListItemRateNote">给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言给顾客的留言</span></abbr>
+            </li>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListItemRateNote">给顾客的留言</span></abbr>
+            </li>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListItemRateNote">给顾客的留言</span></abbr>
+            </li>
+            <li>
+                <abbr>2016-03-24   16:24:24</abbr>
+                <abbr><img src="${bath}/static/img/com_order_icon.png"></abbr>
+                <abbr><span>申请退款</span>(操作:<span>顾客</span>)</abbr>
+                <abbr>留言:<span class="returnListItemRateNote">给顾客的留言</span></abbr>
+            </li>
+        </ul>
+    </div>
+
+    <div class="returnListItemlogistics">
+        <h2>退货物流信息</h2>
+        <ul>
+            <li>退货物流名称:<span>圆通快递</span></li>
+            <li>退货物流单号:<span>54656565456465</span></li>
+        </ul>
+    </div>
+    <div class="returnListItemLeaveMessage">
+        <h2>给商城留言</h2>
+        给商城留言:<span>给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言给商城留言</span>
+    </div>
+
+    <div class="returnListItemAction">
+        <h2>操作(重要)</h2>
+        <ul>
+            <li><input type="radio" checked="checked">退款
+                <span>退款金额(邮宝):</span> <input type="text">
+                <span>退款现金金额(元):</span> <input type="text">
+            </li>
+            <li><abbr style="position: relative; top: -40px;">给客户留言:</abbr><textarea style="margin-left: 20px;" rows="3" cols="30"></textarea></li>
+            <li>
+                <input id="returnListItemActionConfirm" type="button" value="保存">
+                <input id="returnListItemActionCancel" type="button" value="取消">
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".arrow").click(function(){
+            var arr=$(this).val()
+            $(this).siblings("dd").slideToggle()
+            if(arr==0){
+                $(this).css("background","url(${bath}/static/img/com_btn_arrow_black_up.png) center no-repeat")
+                $(this).val("1")
+            }else if(arr==1){
+                $(this).css("background","url(${bath}/static/img/com_btn_arrow_black_down.png) center no-repeat")
+                $(this).val("0")
+            }
+
+        })
+        $(".select dd").click(function(){
+            var secval=$(this).html();
+            $(this).hide().siblings("dd").hide()
+            $(this).siblings("dt").html(secval);
+            $(this).siblings(".arrow").css("background","url(${bath}/static/img/com_btn_arrow_black_down.png) center no-repeat")
+        })
+
+    })
+
+</script>
+<script src="${bath}/static/js/jquery.datetimepicker.full.js"></script>
+<script src="${bath}/static/js/accountReturn.js"></script>
+</body>
+</html>

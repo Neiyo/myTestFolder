@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <div id="test"></div>
+  <div class="show">特效出现
+    <span class="linear-gradient"></span>
+  </div>
+  <div class="show">特效出现
+    <span class="linear-gradient"></span>
+  </div>
+  <div class="show">特效出现
+    <span class="linear-gradient"></span>
+  </div>
+  <div class="show">特效出现
+    <span class="linear-gradient"></span>
+  </div>
+  <ul>
+    <li>
+      <div class="box1">
+        <div class="box2"></div>
+      </div>
+    </li>
+    <li>
+      <div class="box1">
+        <div class="box2"></div>
+      </div>
+    </li>
+    <li>
+      <div class="box1">
+        <div class="box2"></div>
+      </div>
+    </li>
+    <li>
+      <div class="box1">
+        <div class="box2"></div>
+      </div>
+    </li>
+  </ul>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#test').animate({
+    width:10
+  });
+});
+$.myplugin = function(){
+  $('.show').mouseenter(function(){
+    $(this).children().stop().css('width',0).show().animate({width:'100%'},500).fadeOut(100);
+  });
+}();
+$(document).keydown(function(event){
+  if(event.keyCode == 65){
+    $('.show').eq(0).trigger('mouseenter');
+  }
+  if(event.keyCode == 66){
+    $('.show').eq(1).trigger('mouseenter');
+  }
+  if(event.keyCode == 67){
+    $('.show').eq(2).trigger('mouseenter');
+  }
+  if(event.keyCode == 68){
+    $('.show').eq(3).trigger('mouseenter');  
+  }
+})
+</script>
+</html>

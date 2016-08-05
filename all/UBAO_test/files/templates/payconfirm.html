@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="files/css/g.css"/>
+<script type="text/javascript" src="files/js/jquery-2.2.0.min.js"></script>
+<title>无标题文档</title>
+<style type="text/css">
+body{
+	background:#f7f7f7;
+	}
+
+.order{
+	width:1000px;
+	height:80px;
+	background:#e4e4e4;
+	margin-left:20px;
+	margin-top:30px;
+	position:relative;
+	}
+.order li.orderLeft{
+	width:300px;
+	height:80px;
+	line-height:80px;
+	position:absolute;
+	left:20px;
+	top:0px;
+	color:#000;
+	font-size:16px;
+}
+.order li.orderRight{
+	width:300px;
+	height:80px;
+	line-height:80px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	color:#000;
+	font-size:16px;
+}
+.order li.orderRight span{
+	color:#ff3300;
+	font-size:22px;
+}
+
+.textVal{
+	width:1000px;
+	height:200px;
+	margin-left:20px;
+	margin-top:30px;
+	position:relative;
+}
+.textVal ul li{
+	float:left;
+	width:120px;
+	height:40px;
+	background:#ccc;
+	text-align:center;
+	line-height:40px;
+	color:#000;
+	font-size:14px;
+	cursor:pointer;
+}
+.textVal ul li.on{
+	background:#FFF;
+	display:block;
+}
+.textVal ul li div.on1{
+	background:#FFF;
+	display:block;
+}
+
+.textVal ul li div{
+	width:1000px;
+	height:150px;
+	position:absolute;
+	left:0px;
+	top:40px;
+	display:none;
+}
+.textVal ul li div dt{
+	float:none;
+	background:#FFF;
+	width:80%;
+	text-align:left;
+	padding:5px 0px;
+	margin-left:20px;
+}
+.textVal ul li div dl{
+	margin-top:20px;
+}
+#textName{
+	width:220px;
+	height:40px;
+	border-style:none;
+	border:1px solid #CCC;
+	border-radius:3px;
+	background:#FFF;
+	padding-left:15px;
+}
+#textGet{
+	width:120px;
+	height:40px;
+	border-style:none;
+	border-radius:3px;
+	background:#0099ff;
+	margin-left:15px;
+	color:#FFF;
+	cursor:pointer;
+}
+#check{
+	display:inline-block;
+	margin-left:30px;
+	font-size:12px;
+	
+	}
+#payCheck{
+	width:120px;
+	height:40px;
+	border-style:none;
+	border:1px solid #CCC;
+	border-radius:3px;
+	background:#ccc;
+	color:#FFF;
+	position:relative;
+	left:900px;
+	top:20px;
+	cursor:pointer;
+}
+
+.success{
+	width:600px;
+	height:450px;
+	background:#FFF;
+	border:1px solid #ccc;
+	box-shadow:0px 0px 3px 3px #CCC;
+	position:fixed;
+	left:15%;
+	top:30%;
+	z-index:2;
+	display:none;
+		
+}
+
+.success span{
+	display:inline-block;
+	height:40px;
+	position:relative;
+	left:150px;
+	top:150px;
+	color:#000;
+	font-size:20px;
+}
+.success span img{
+	margin-right:30px;
+}
+#paydetail{
+	display:inline-block;
+	width:100px;
+	height:30px;
+	line-height:35px;
+	color:#FFF;
+	font-size:14px;
+	border-radius:3px;
+	text-align:center;
+	background:#2087fc;
+	position:relative;
+	top:300px;
+	left:-120px;
+	cursor:pointer;
+}
+#paycomplete{
+	display:inline-block;
+	width:100px;
+	height:30px;
+	line-height:35px;
+	font-size:14px;
+	color:#FFF;
+	border-radius:3px;
+	text-align:center;
+	background:#2087fc;
+	position:relative;
+	top:300px;
+	left:-60px;
+	cursor:pointer;
+
+}
+.noMoney{
+	text-align:center;
+	width:600px;
+	height:200px;
+	border:1px solid #666;
+	border-radius:3px;
+	box-shadow:1px 1px 2px 2px #CCC;
+	position:fixed;
+	left:10%;
+	top:35%;
+	background:#FFF;
+	color:#000;
+	line-height:80px;
+	display:none;
+	}
+.noMoney span{
+	font-size:18px;
+	}
+.noMoney span i{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	background:url(files/img/XX.png) center no-repeat;
+	cursor:pointer;
+	position:relative;
+	left:200px;
+}
+	
+</style>
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".textVal ul li").click(function(){
+		$(this).addClass("on").children("div").addClass("on1");
+		$(this).siblings("li").removeClass("on").children("div").removeClass("on1");
+		})
+	$("#textName").blur(function(){
+		var textVal=$("#textName").val()
+		if(textVal!==""){
+			$("#payCheck").css({"background":"#0099ff"}).removeAttr("disabled")
+			}else{
+				$("#payCheck").css({"background":"#ccc"}).attr("disabled","disabled")
+				}
+	})
+});
+
+</script>
+
+
+
+</head>
+
+<body>
+<div class="topNews">
+	<span class="news"><img style="margin-right:10px; width:25px; height:25px;" src="files/img/ring.png" width="20" height="20" />消息<i>1</i>
+    </span>
+    <span class="users"><img style="margin-right:10px; width:25px; height:25px;" src="files/img/user.png" width="20" height="20" />南京邮政<i></i>
+    </span>
+</div>
+<div style="width:100%; height:100px; border-bottom:2px solid #dcdcdc; margin-left:20px;">
+	<span style="font:24px '黑体'; color:#000; display:inline-block; margin-top:15px;margin-bottom:20px;">用户提货
+    </span>
+     <img style="margin-left:800px;" src="files/img/zhifu.png" width="680" height="57" />
+   	<br  />
+	代客下单
+   
+</div>
+
+
+<div class="order">
+	<ul>
+    	<li class="orderLeft">订单编号:<span>21312131321213</span></li>
+        <li class="orderRight">应付金额：<span>8000.00邮宝</span></li>
+    </ul>
+</div>
+
+<div class="textVal">
+	<ul>
+    	<li class="on">短信验证码验证
+        	<div class="on1">
+            	<dl>
+                	<dt>短信验证码已发送到手机号：<span>123412312342</span>
+                    </dt>
+                    <dt><input type="text" id="textName" placeholder="短信验证码"/><input type="button" id="textGet" value="获取验证码" />
+                    </dt>
+                </dl>
+            </div>           	
+        </li>
+        <li>免验证
+        	<div>
+            	<dl style="margin-top:50px;">
+                <dt>
+                  	<i><img src="files/img/ok.png" width="40" height="40" /></i><span id="check">账号已经被授权，代客下单免验证</span>	
+				</dt>
+                </dl>            
+            </div>
+        </li>
+    </ul>
+</div>
+	<input type="button" id="payCheck" value="确认支付" disabled="disabled"/>
+<div class="success">
+	<span><img src="files/img/ok.png" width="40" height="40" />付款成功，订单已支付</span>
+	<a id="paydetail">完成</a>
+    <a id="paycomplete">查看订单</a>
+</div>
+
+
+<div class="noMoney">
+	<span>系统提示<i></i></span>
+    <br />
+    账户邮宝余额不足，无法完成支付
+    
+</div>
+</body>
+</html>

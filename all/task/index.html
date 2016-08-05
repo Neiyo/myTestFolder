@@ -1,0 +1,27 @@
+<style type="text/css">
+@media screen{
+  div{
+      display: none;
+  }
+}
+@media handled{
+  div{
+      display: none;
+  }
+}
+</style>
+<body>
+  <div>123</div>
+  <button onclick="getMac();">123</button>
+</body>
+<script src="ajaxSDK.js"></script>
+<script src="md5.js"></script>
+<script type="text/javascript">
+var data = {
+  "0":[
+    {'key': 'c' ,'value':'2'},
+    {'key':'b','value':'3'}
+  ]
+};
+dataSend(data,'demo.php','POST');
+</script>

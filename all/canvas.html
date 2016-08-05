@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+  <style>
+    canvas{
+      width:auto;
+      height:auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" />
+  <img src="./test/2.jpg" />
+</body>
+<script type="text/javascript">
+  var canvas = document.getElementById('canvas');
+  var img = new Image();
+  img.src = "./test/2.jpg";
+  console.log(img);
+  var ctx = canvas.getContext('2d');
+      /*ctx.strokeStyle ='hsl(120,50%,50%)';//线条颜色：绿色
+      ctx.lineWidth = 2;//设置线宽
+      ctx.beginPath();
+      ctx.moveTo(200,100);
+      ctx.lineTo(250,100);
+      ctx.lineTo(250,150);
+      ctx.closePath();//可以把这句注释掉再运行比较下不同
+      ctx.stroke();//画线框*/
+      ctx.drawImage(img,10,10);
+</script>
+</html>

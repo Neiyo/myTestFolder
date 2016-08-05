@@ -1,0 +1,13 @@
+/*登入框*/
+.page-login {
+	background-color: #db3729;
+	padding: 40px;
+}
+.login-logo {
+	background-color: #db3729;
+	background-image: url("../img/login.png");
+	height: 110px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-bottom: 35px;
+}

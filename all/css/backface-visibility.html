@@ -1,0 +1,44 @@
+<style>
+.container {
+    /* 其它通用样式 */
+    /* 使用perspective属性制作3D空间 */
+    perspective: 800px;
+}
+
+.card {
+    /* 其它通用样式 */
+    position: relative;
+    transition: all .4s linear;
+    /* 下面这个属性允许子元素在3D空间中进行定位 */
+    transform-style: preserve-3d;
+}
+
+.face {
+    /* 其它通用样式 */
+    /* 使用绝对定位使扑克牌的两个面能够堆叠在一起 */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    /* 当扑克牌翻转时阻止正面的显示 */
+    backface-visibility: hidden;
+}
+
+.back {
+    /* ... */
+    /* 将扑克牌背面翻转180度，这样在扑克牌翻转时背面能够面向观察者 */
+    transform: rotateY(180deg);
+}
+
+/* 当鼠标滑过卡片时，翻转扑克牌，使牌的背面面向观察者 */
+.card:hover {
+    transform: rotateY(180deg);
+}
+</style>
+
+<div class="container">
+    <div class="card">
+        <div class="face front">Front</div>
+        <div class="face back">Back</div>
+    </div>
+</div>

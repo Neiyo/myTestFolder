@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <title>分组元素</title>
+</head>
+<body>
+
+<p>这是一个段落</p>
+<p>这是另一个段落</p>
+<blockquote>123123</blockquote>
+<blockquote>123123</blockquote>
+<p>zzxc               ccc</p>
+<pre>zzxcc
+  hjjkhjkjk
+  cc</pre>
+
+  <ol start="5">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ol>
+  <figure>
+    <figcaption>ads </figcaption>
+    <img src="a.jpg">
+  </figure>
+  <table border="1" style="width:300px;height:150px;">
+    <caption>表头</caption>
+    <colgroup>
+      <col />
+      <col span="1" style="background:red;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>z</th>
+        <th>x</th>
+        <th>c</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="3">滚蛋</td>
+      </tr>
+    <tfoot>
+    <tbody>
+      <tr>
+        <td rowspan="2">1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+    </tbody>
+  </table>
+  <form>
+    用户名:<input type="text" required="required" id="username" />
+    <input type="search" required="required" id="username" />
+    <input type="number" required="required" id="username" />
+    <input type="date" required="required" id="username" />
+    <input type="image" />
+
+  </form>
+  <a href="http://www.baidu.com" target="in">baidu</a>|<a href="http://www.qq.com" target="in">sohu</a>
+  <iframe name="in" style="height:500px; width:900px;" href="http://www.baidu.com"></iframe>
+  <progress value="50" max="100" id="a"></progress>
+  <video src="a.webm" poster="a.jpg" controls width="800" height="600">aaa</video>
+  <div id="myDiv" style="width:500px;height:200px;color:red;"></div>
+</body>
+<script type="text/javascript">
+window.onload = function(){
+  setInterval("myProgress()",1000);//1000为1秒钟
+}
+function myProgress()
+{
+    var a = document.getElementById("a");
+    a.value++;
+}
+</script>
+<script src="md5.js" type="text/javascript"></script>
+<script src="ajaxDemo.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var jsonString = {"fname" : "Bill","lname" : "Gates"};
+
+  //加密后存入cache，若浏览器支持localStorage同时存入localStorage
+  saveData("asd");
+
+  //ajax发送json字符串到服务器
+  ajax("demo.php",'POST',JSON.stringify(jsonString),a);
+  new Promise(function(fulfill,reject){
+
+  })
+  function a(){
+    console.log(123);
+  }
+</script>
+<script src="ajax_promise.js"></script>
+</html>

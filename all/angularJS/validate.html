@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<style>
+	input.ng-invalid{
+		border-color:red;
+	}
+  input.ng-empty{
+    background-color: yellow;
+  }
+</style>
+</head>
+<div ng-app="A">
+  <form name="form" ng-controller="MainCtrl">
+    <div>
+      <input type="email" name="myAddress" ng-maxlength="12" ng-model="user.name"/>
+    </div>
+    <div style="margin-top:5px;">
+      <input type="url" name="myUrl" ng-maxlength="12" ng-model="user.url"/>
+    </div>
+		<div>合法email:{{user.name}}</div>
+		<div>合法url:{{user.url}}</div>
+	</form>
+
+</div>
+<script>
+  var app = angular.module("A",[]);
+	app.controller("MainCtrl",function($scope){
+
+	});
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="jquery-2.2.0.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-init="firstName='Zzjoy'">
+  <!-- ng-bind直接绑定html，而不是在页面生成之后再进行二次渲染   -->
+  <p>名字 : <span type="text" ng-model="XXX"/></p>
+  <h1>Hello {{XXX}}</h1>
+  Your name: <input type="text" ng-model="yourname" placeholder="zxxx">
+          <hr>
+          Hello {{yourname || 'World'}}!
+  <li ng-repeat="x in firstName">{{x}}</li>
+  <diy-directive ></diy-directive>
+</div>
+<script>
+  var app = angular.module("myApp",[]);
+  app.directive("diyDirective",function(){
+    return {
+      scope:{},
+      restrict:'E',
+      template:"<h1>{{name}}</h1>",
+      replace:'false',
+      compile:function(scope,element){
+        scope.name = 'fuck';
+        console.log(scope.name);
+      },
+      link:function(scope,element){
+        //scope.name = 'Zzjoy';
+      }
+    };
+  });
+</script>
+
+</body>
+</html>

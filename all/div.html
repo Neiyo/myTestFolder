@@ -1,0 +1,17 @@
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<input type="button" value="ok" style="z-index:3" />
+<script type="text/javascript">
+  $("input").click(function(){
+    alert(1);
+  });
+  var html = '<div id="umberlla"></div>';
+  $("body").append(html);
+  $("#umberlla").css("background","gray");
+  $("#umberlla").css("opacity","0.3");
+  $("#umberlla").css("position","fixed");
+  $("#umberlla").css("top","0");
+  $("#umberlla").css("left","0");
+  $("#umberlla").css("width","100%");
+  $("#umberlla").css("height","100%");
+  $("#umberlla").css("z-index","1");
+</script>

@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="files/css/g.css"/>
+<title>无标题文档</title>
+<style>
+body{
+	background:#f7f7f7;
+	}
+a{
+	color:#20abf6;
+}
+.aList{
+	width:100%;
+	height:100%;
+	margin-left:20px;
+}
+.aList li{
+	width:100%;
+	padding:1px 0px;
+	margin-top:20px;
+}
+.aList li abbr{
+	display:inline-block;
+	text-align:right;
+	font-size:14px;
+	color:#333;
+	width:120px;
+}
+.aList li span{
+	display:inline-block;
+	font-size:14px;
+	color:#333;
+	width:400px;
+	margin-left:30px;
+}
+#aloadPwd{
+	width:400px;
+	height:30px;
+	border-style:none;
+	border:1px solid #999;
+	border-radius:3px;
+	background:#fff;
+	margin:0px 80px 0px 30px;
+	}
+#apayPwd{
+	width:400px;
+	height:30px;
+	border-style:none;
+	border:1px solid #999;
+	border-radius:3px;
+	background:#fff;
+	margin:0px 80px 0px 30px;
+
+	}
+.update{
+	display:inline-block;
+	margin:0px 20px;
+	}
+.notice{
+	width:600px;
+	height:200px;
+	border:1px solid #999;
+	border-radius:5px;
+	box-shadow:2px 2px 3px 1px #666;
+	position:fixed;
+	left:10%;
+	top:50%;
+	background:#FFF;
+}
+.notice li{
+	border:1px solid #CCC;
+	text-align:center;
+	color:#000;
+}
+.notice a#con{
+	display:inline-block; 
+	width:80px; 
+	height:30px; 
+	line-height:30px; 
+	color:#FFF; 
+	background:#0099ff; 
+	margin-top:30px; 
+	cursor:pointer;
+	}
+.notice i#xx{
+	display:inline-block;
+	width:20px;
+	height:20px;
+	background:url(files/img/XX.png) center no-repeat;
+	position:relative;
+	left:450px;
+	top:20px;
+}
+
+
+
+
+
+
+
+.newAddress{
+	z-index:3;
+	width:700px;
+	height:350px;
+	background:#FFF;
+	position:fixed;
+	left:10%;
+	top:30%;
+	border:1px solid #CCC;
+	border-radius:2px;
+	box-shadow:1px 1px 1px 1px #999999;
+	}
+.newAddress span{
+	display:inline-block;
+	font-size:14px;
+	color:#000;
+	padding:5px 0px 0px 20px;
+	width:680px;
+	height:20px;
+	background:#f7f7f7;
+}
+.newAddress ul{
+	margin-top:20px;
+	}
+
+.newAddress ul li{
+	padding:5px 0px;
+	font-size:12px;
+}
+.newAddress ul li abbr{
+	display:inline-block;
+	font-size:12px;
+	width:80px;
+	color:#666;
+	text-align:right;
+	padding:5px;
+}
+
+.newAddress ul li i{
+	display:inline-block;
+	margin:0px 3px;
+	color:#ff3300;
+}
+.newAddress ul li input{
+	width:180px;
+	height:25px;
+	border-style:none;
+	border:1px solid #CCC;
+	border-radius:3px;
+	background:#fff;
+}
+.newAddress ul li select{
+	width:80px;
+	height:45px;
+	padding:5px;
+	border-style:none;
+	border:1px solid #CCC;
+	border-radius:3px;
+	background:#FFF;
+
+}
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+<div class="topNews">
+	<span class="news"><img style="margin-right:10px; width:25px; height:25px;" src="files/img/ring.png" width="20" height="20" />消息<i>1</i>
+    </span>
+    <span class="users"><img style="margin-right:10px; width:25px; height:25px;" src="files/img/user.png" width="20" height="20" />南京邮政<i></i>
+    </span>
+</div>
+<div style="width:100%; height:100px; border-bottom:2px solid #dcdcdc; margin-left:20px;">
+	<span style="font:24px '黑体'; color:#000; display:inline-block; margin-top:15px;margin-bottom:20px;">账号信息
+    </span>
+   	<br  />
+    <a href="conpanyAccount.html">公司信息</a>
+    |
+    <span style="display:inline-block; margin-left:10px;">账号信息</span>
+</div>
+
+<div class="aList">
+	<ul>
+    	<li><abbr>公司名称:</abbr><span>南京邮政江宁局</span>
+        </li>
+        <li><abbr>账号名称:</abbr><span>南京邮政江宁三局</span>
+        </li>
+        <li><abbr>账号:</abbr><span>njyz@chinapost.com</span>
+        </li>
+        <li><abbr>公司联系地址:</abbr><span>南京市江宁区江宁大道88号</span>
+        </li>
+        <li><abbr>联系人:</abbr><span>李四</span>
+        </li>
+        <li><abbr>联系方式:</abbr><span>12345678901</span>
+        </li>
+        <li><abbr>登录密码:</abbr><input type="password" name="aloadPwd" id="aloadPwd" placeholder="登录账户时需要输入的密码" /><span><a class="update">修改</a>|<a class="update">忘记</a></span>
+        </li>
+        <li><abbr>支付密码:</abbr><input type="password" name="apayPwd" id="apayPwd" placeholder="在账户财富(U币和U币兑换码)变动时需要输入的密码" /><span><a class="update">修改</a>|<a class="update">忘记</a></span>
+        </li>
+    </ul>
+</div>
+
+
+<div class="notice">
+<ul>
+	<li style="height:70px; text-align:left;"><span style="position:relative; left:30px; top:20px; font-size:24px;">操作提示</span><i id="xx"></i>
+    </li>
+    <li style="height:40px; line-height:40px;">请联系上级账号修改
+    </li>
+    <li style="height:90px;"><a id="con">确定</a>
+    </li>
+</ul>
+</div>
+
+
+<form>
+<div class="newAddress">
+<span>新增收货人信息<i></i></span>
+	<ul>
+    	<li><abbr><i>*</i>收货人：</abbr><input type="text" name="adName"  />
+        </li>
+        <li><abbr><i>*</i>所在地区：</abbr><select>
+        <option selected="selected">北京</option>
+        </select>
+        <select>
+        <option selected="selected">北京市</option>
+        </select>
+        <select>
+        <option selected="selected">东城区</option>
+        </select>
+        </li>
+        <li><abbr><i>*</i>详细地址：</abbr><input type="text" name="adAddress"  />
+        </li>
+        <li><abbr><i>*</i>手机号码：</abbr><input type="text" name="adCell"  /><abbr>固定电话：</abbr><input type="text" name="adTel"  />
+        </li>
+        <li><abbr>邮政编码：</abbr><input type="text" name="adCell"  />
+        </li>
+        <li><input type="submit" value="保存收货人信息"  style="width:100px; background:#f5f5f5; position:relative; left:90px; top:10px;"/>
+        </li>
+    </ul>
+</div>
+</form>
+
+
+</body>
+</html>

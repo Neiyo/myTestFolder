@@ -1,0 +1,100 @@
+#show{
+  margin-left: 50px;
+}
+.row img{
+  width:80%;
+  height:auto;
+  padding-top: 30px;
+}
+#cart{
+  position:fixed;
+  bottom:20px;
+  right:40px;
+  background-color: orange;
+  width:250px;
+  height:40px;
+  border-radius: 10px;
+}
+#cart > p{
+  position: absolute;
+  top:5px;
+  right:10px;
+  color:white;
+  font-size: 20px;
+}
+#cart > img{
+  position: absolute;
+  top:-11px;
+  left:-40px;
+  width:25%;
+  height:auto;
+  border-radius: 50px;
+}
+#cart > img:hover{
+  box-shadow: 0px 0px 2px 3px #888888
+}
+#cart_show{
+
+}
+#cart_show img{
+  width:30%;
+  height:auto;
+}
+
+row > div{
+  position:relative;
+}
+.product_name{
+
+}
+
+.product_container{
+  position: absolute;
+  top:-10px;
+}
+ul{
+  position: absolute;
+  left:-30px;
+}
+li{
+  list-style-type: none;
+  height:55px;
+}
+
+li > img{
+  vertical-align: middle;
+}
+.calculate{
+  margin-left: 12px;
+}
+.calculate input{
+  width:15px;
+  margin-left: 7px;
+  border:0;
+}
+.calculate button{
+  border: 0;
+}
+.calculate .delete_button{
+  margin-left: 30px;
+}
+.img_div{
+  position: absolute;
+  width: 200px;
+  height:180px;
+  z-index: 1;
+}
+iframe{
+  position: absolute;
+  bottom:39px;
+  left:15px;
+  width:90%;
+  height:0px;
+  background-color: white;
+  border:5px solid red;
+  border-bottom:0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

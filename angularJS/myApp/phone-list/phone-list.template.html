@@ -1,0 +1,16 @@
+<div>
+  <P>
+    Search:
+    <input type="text" ng-model="$ctrl.query">
+  </P>
+  <select ng-model="$ctrl.orderProp">
+    <option value="name">name</option>
+    <option value="age">age</option>
+  </select>
+  <ul>
+    <li ng-repeat="person in $ctrl.persons | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+      <span>{{person.name}}</span>
+      <span>{{person.age}}</span>
+    </li>
+  </ul>
+</div>

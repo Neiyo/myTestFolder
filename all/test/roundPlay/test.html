@@ -1,0 +1,63 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <style>
+  a:hover,
+  a:focus {
+    color: #2a6496;
+    text-decoration: line-through;
+  }
+
+  a:focus {
+    outline: thin dotted #333;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+  }
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    /*
+      box-shadow: h-shadow v-shadow blur spread color inset;
+      h-shadow	必需。水平阴影的位置。允许负值。
+      v-shadow	必需。垂直阴影的位置。允许负值。
+      blur	可选。模糊距离。
+      spread	可选。阴影的尺寸。
+      color	可选。阴影的颜色。请参阅 CSS 颜色值。
+      inset	可选。将外部阴影 (outset) 改为内部阴影。
+    */
+    box-shadow: 5px 5px 5px 5px black;
+  }
+  img{
+    max-width: 100%;
+    height:auto;
+    display: inline-block;
+  }
+  img:hover{
+    text-shadow: underline;
+  }
+
+  container:before,
+  container:after{
+    display: table;
+    content: "";
+  }
+  container:after{
+    clear:both;
+  }
+  </style>
+</head>
+<body>
+  <a href="#">测试A标签</a>
+  <div class="container">
+    <img src="../bootstrap/img/sleep.jpg" id="img"/>
+  </div>
+</body>
+<script type="text/javascript">
+  var img = document.getElementById("img");
+  img.onclick = function(){
+    console.log(1);
+  };
+</script>

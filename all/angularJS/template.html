@@ -1,0 +1,35 @@
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<div ng-app="selectionApp">
+  <div ng-controller="selectionController">
+    <select ng-model="value">
+      <option value="Zzjoy">Zzjoy</option>
+      <option value="XiaoHan">XiaoHan</option>
+    </select>
+    <ul>
+      <li ng-repeat="phone in phones | filter:value">
+        <span>{{phone.name}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<script>
+  angular.module("selectionApp",[]).
+  controller(
+    "selectionController",
+    function($scope){
+      $scope.value = "Zzjoy";
+      $scope.$watch("value",function(){
+        console.log($scope.value);
+      });
+      $scope.phones=[
+        {
+          name:'Zzjoy'
+        },{
+          name:'XiaoHan'
+        },{
+          name:'XSKB'
+        }
+      ];
+    }
+  );
+</script>

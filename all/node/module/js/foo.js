@@ -1,0 +1,1 @@
+var foo = {  log:function(){    console.log('Require Successfully');  }};module.exports = foo;

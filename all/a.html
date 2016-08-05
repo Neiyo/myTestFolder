@@ -1,0 +1,134 @@
+<!-- <script type="text/javascript">
+function BusinessType(name,id){
+  var businessType = new BusinessObject(name,id);
+  var ucoinValue = new BusinessObject();
+  var parameterArray = new ParameterArray();
+  return {
+    businessType:businessType,
+    ucoinValue:ucoinValue,
+    parameterArray:parameterArray
+  }
+}
+function BusinessObject(name,id){
+  var name = name;
+  var id = id;
+  var setObject = function(name,id){
+    this.name = name;
+    this.id = id;
+  };
+  var del = function(){
+
+  };
+  var modify = function(){
+
+  };
+  return {
+    name:name,
+    id:id,
+    setObject:setObject,
+    del:del,
+    modify:modify
+  }
+}
+function ParameterArray(){
+  var parameterArray = [];
+
+  var setParameterArray = function(arr){
+    this.parameterArray = arr;
+  };
+
+  var addParameter = function(parameterObject){
+    this.parameterArray.push(parameterObject);
+  };
+
+  var delOfIndex = function(index){
+    var tempArr = [];
+    for(var i = 0;i < this.parameterArray.length;i++){
+      if( i != index ){
+        console.log(i,this.parameterArray[i]);
+        tempArr.push(this.parameterArray[i]);
+      }
+    }
+    this.parameterArray = tempArr;
+  };
+
+  return {
+    parameterArray:parameterArray,
+    setParameterArray:setParameterArray,
+    delOfIndex:delOfIndex,
+    addParameter:addParameter
+  }
+}
+
+function ParameterObject(pA,pB){
+  var paramName = pA;
+  var paramValue = pB;
+  return {
+    paramName:paramName,
+    paramValue:paramValue
+  }
+}
+
+
+var createCard = new BusinessType('createCard','01');
+var ob1 = new BusinessObject('存期','01');
+var ob2 = new BusinessObject('一个月','01');
+var param1 = new ParameterObject(ob1,ob2);
+
+var obA = new BusinessObject('金额','02');
+var obB = new BusinessObject('浮点数字','02');
+var param2 = new ParameterObject(obA,obB);
+
+var arr = [];
+if( param1 ){
+  console.log('ParameterObject success');
+}
+arr.push(param1,param2);
+createCard.parameterArray.setParameterArray(arr);
+console.log(createCard);
+createCard.parameterArray.delOfIndex(0);
+console.log(createCard);
+
+
+</script> -->
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+#div1 {width:488px;height:70px;padding:10px;border:1px solid #aaaaaa;}
+#drag{
+  width:468px;
+  height:60px;
+  background: url('/w3school_banner.gif');
+}
+</style>
+<script type="text/javascript">
+function allowDrop(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData("Text",ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var data=ev.dataTransfer.getData("Text");
+ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<p>请把 W3School 的图片拖放到矩形中：</p>
+
+<div id="drag" draggable="true" ondragstart="drag(event)" ></div>
+<div ondrop="drop(event)" ondragover="allowDrop(event)">1</div>
+<div ondrop="drop(event)" ondragover="allowDrop(event)">2</div>
+<div ondrop="drop(event)" ondragover="allowDrop(event)">3</div>
+
+</body>
+</html>

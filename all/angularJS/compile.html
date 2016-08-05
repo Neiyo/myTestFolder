@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="jquery-2.2.0.min.js"></script>
+<style>
+  input:focus{
+      outline: none;
+  }
+  input.ng-invalid {
+      border-color: red;
+  }
+</style>
+</head>
+<body ng-app="app" ng-controller="MainCtrl" />
+  <lable>
+    用户名:<input type="text" ng-model="username" ng-blur="repeater();" required/>
+    哈哈长度:<input type="text" ng-model="length" required/>
+  </lable>
+  <ul repeater="{{length}}">
+    <li>哈哈哈哈</li>
+  </ul>
+  <form name="form" novalidate>
+    <input type="text" ng-model="text" ng-maxlength="5"/>
+  </form>
+
+<script>
+  var app = angular.module("app",[]);
+  app.controller('MainCtrl', function($scope) {
+      $scope.repeater = function() {
+          //send ajax to check on server
+          if ($scope.username == 'hellobug') {
+             $scope.usernameAlreadyExist = true;
+          }
+          else{
+            $scope.usernameAlreadyExist = false;
+          }
+      }
+  });
+  app.directive('ngBlur', function($document) {
+      return {
+          link: function(scope, element, attrs) {
+              $(element).on('input', function(e){
+                  scope.$apply(attrs.ngBlur);
+              });
+          }
+      }
+  });
+  app.directive('repeater',function($document){
+      return {
+          restrict:'A',
+          link:function(scope,element,attrs){
+            var template = $(element).children().first().clone();
+            scope.$watch("length",function(){
+                var originalLength = $(element).children().length;
+                var inputLength = scope.length;
+                if( inputLength < originalLength){
+                  for(var i = 0;i < ( originalLength - inputLength );i++ ){
+                    $(element).children().last().remove();
+                  }
+                }
+                else{
+                  for(var i = 0;i < ( inputLength - originalLength );i++ ){
+                    $(element).append(template.clone());
+                  }
+                }
+            });
+          }
+      }
+  });
+
+</script>
+
+</body>
+</html>

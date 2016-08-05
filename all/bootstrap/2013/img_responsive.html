@@ -1,0 +1,114 @@
+<!doctype html>
+<head>
+  <!-- 为了让 Bootstrap 开发的网站对移动设备友好，确保适当的绘制和触屏缩放，需要在网页的 head 之中添加 viewport meta 标签 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <style>
+    :target{
+      border:2px solid black;
+      background-color: #e5eecc;
+    }
+    img{
+      border:2px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 通过添加 img-responsive class 可以让 Bootstrap 3 中的图像对响应式布局的支持更友好。
+接下来让我们看下这个 class 包含了哪些 css 属性。
+在下面的代码中，可以看到img-responsive class 为图像赋予了 max-width: 100%; 和 height: auto; 属性，可以让图像按比例缩放，不超过其父元素的尺寸。
+.img-responsive {
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+-->
+  <a href="#img" >IMG</a>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+
+  <p>1</p><p>1</p>
+  <p>1</p>
+  <p id="p">1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <p>1</p>
+  <img id="img" src="../img/samo.jpg" class="img-responsive icon-heart" alt="响应式图像">
+  <img  class="icon-heart" />
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>images</title>
+ <script type="text/javascript">
+  var curIndex = 0;
+  var timeInterval = 1000;
+  var arr = new Array();
+  arr[0] = "../img/samo.jpg";
+  arr[4] = "../img/twins.jpg";
+  arr[5] = "../img/cat.jpg";
+  arr[6] = "../img/sleep.jpg";
+  setInterval(changeImg,timeInterval);
+  function changeImg() {
+   var obj = document.getElementById("obj");
+   if (curIndex == arr.length-1) {
+    curIndex = 0;
+   } else {
+    curIndex += 1;
+     }
+   obj.src = arr[curIndex];
+  }
+ </script>
+
+ <!-- <script language="javascript">
+  setInterval(test,1000);
+  var array = new Array();
+  var index = 0;
+  var array = new Array("image/1.jpg","image/2.jpg","image/3.jpg","image/4.jpg","image/5.jpg","image/6.jpg","image/7.jpg","image/8.jpg","image/9.jpg","image/10.jpg");
+  function test() {
+   var myimg=document.getElementById("imgs");
+   if(index==array.length-1)
+   { index=0; }else{ index++; }
+   myimg.src=array[index];
+  }
+ </script> -->
+ </head>
+ <body>
+  <img id = "obj" src = "../img/samo.jpg" border = 0 />
+ </body>
+</html>
+
+</body>

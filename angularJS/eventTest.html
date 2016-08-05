@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<style>
+	input.ng-invalid{
+		border-color:red;
+	}
+  input.ng-empty{
+    background-color: yellow;
+  }
+  .click{
+    width:100px;
+    height:60px;
+    background-color: #ff88cc;
+    border-radius: 5px;
+    line-height: 60px;
+    padding: 5px;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<div ng-app="A">
+  <div ng-controller="MainCtrl">
+    <div class="click" ng-click="range()" ng-show="!show()">{{value}}</div>
+    <div class="click" ng-show="lock" ng-click="show()">look</div>
+		<select>
+			<option></option>
+		</select>
+  </div>
+</div>
+<script>
+  var app = angular.module("A",[]);
+	app.controller("MainCtrl",function($scope){
+    $scope.value = "aaa";
+    $scope.lock = true;
+    $scope.range = function(){
+      $scope.value = random(20,38,2);
+    };
+    $scope.show = function(){
+      if( $scope.lock == true ){
+        $scope.lock = false;
+      }
+      else{
+        $scope.lock = true;
+      }
+    }
+	});
+
+
+  function random(a,b,c){
+    //a起始数字，b结束数字
+    return ( (b - a)*Math.random() + a ).toFixed(c);
+  }
+</script>
+</html>

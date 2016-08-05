@@ -1,0 +1,18 @@
+<script src="pouchdb-5.4.5.js"></script>
+<script type="text/javascript">
+  var db = new PouchDB("my_database");
+  //插入
+  db.put({
+    _id: 'mydoc',
+    name: 'Zzjoy',
+    age: 24
+  });
+  //根据id值获取，返回object类型
+  db.get('mydoc').then(function(doc){
+    console.log(doc.name);
+  }).then(function(response){
+
+  }).catch(function(err){
+    console.log(err);
+  });
+</script>

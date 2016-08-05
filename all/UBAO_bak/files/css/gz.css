@@ -1,0 +1,38 @@
+﻿
+body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, form, div, input, textarea {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background:#fcfcfc;
+    color: #666666;
+    font-family: "Arial","宋体";
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+    font-size: 12px;
+}
+ul, li {
+    list-style-type: none;
+}
+img {
+    border: medium none;
+}
+img, input, select {
+    vertical-align: middle;
+}
+input, textarea, button {
+    font-family: Tahoma,sans-serif,宋体;
+}
+
+a {
+    color: #004691;
+    text-decoration: none;
+}
+a:hover {
+    color: #FF3300;
+    text-decoration: none;
+}

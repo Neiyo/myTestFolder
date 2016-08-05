@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>邮宝系统_登录界面</title>
+  <!-- 主要样式 -->
+  <link rel="stylesheet" href="./files/css/style.css">
+  <!-- 全局样式 -->
+  <link rel="stylesheet" href="./files/css/g.css">
+  <!-- 分页样式 -->
+  <link rel="stylesheet" href="./files/css/jPages.css">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link rel="stylesheet" href="./files/bootstrap/css/bootstrap.min.css">
+
+  <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+  <link rel="stylesheet" href="./files/bootstrap/css/bootstrap-theme.min.css">
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="./files/js/jquery-2.2.0.min.js"></script>
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="./files/bootstrap/js/bootstrap.min.js"></script>
+
+  <style type="text/css">
+    body{
+      background-color: #f7f7f7;
+    }
+  </style>
+</head>
+<body>
+  <div class="topNews">
+  	<span class="news"><img style="margin-right:10px; width:25px; height:25px;" src="files/img/ring.png" width="20" height="20" />消息<i>1</i>
+      </span>
+      <span class="users"><img style="margin-right:10px; width:25px; height:25px;" src="files/img/user.png" width="20" height="20" />南京邮政<i></i>
+      </span>
+  </div>
+  <div style="width:100%; height:100px; border-bottom:2px solid #dcdcdc; margin-left:20px;">
+  	<span style="font:24px '黑体'; color:#000; display:inline-block; margin-top:15px;margin-bottom:20px;position:relative;">用户提货
+      </span>
+     	<br  />
+      <span style="display:inline-block; margin:0px 10px 0px 10px;color:black;">代客下单</span>
+      <img style="background-color:pink;width:400px;height:30px;margin-left:700px;vertical-align:middle;"/>
+  </div>
+
+  <article class="userItem">
+    <header>下单用户</header>
+    <section>
+      <input type="text" pattern="^\d{17}[\w\d]$"/>
+      <div>
+        <img />
+        <span style="font-size:20px;">3408281991036841265</span>
+        <span>松涛&nbsp;&nbsp;&nbsp;18550442308</span>
+        <span>邮宝余额:800.00</span>
+      </div>
+    </section>
+  </article>
+  <article class="delivery">
+    <header>配送方式</header>
+    <section>
+      <div class="tabs">
+        <span class="tab1">网点自提</span><span class="tab2">物流配送</span><hr/>
+      </div>
+      <div class="tabs_content" >
+        <header>提货网店</header>
+        <div>
+          <span>中国邮政江宁三局</span>&nbsp;&nbsp;&nbsp;<span>南京市江宁区江宁大道88号</span>
+        </div>
+      </div>
+      <div class="tabs_content post" style="position:absolute;top:50px;">
+        <header style="position:relative;">收货人信息<a style="position:absolute;display:inline-block;right:43px;color:#0099ff;text-decoration:none;cursor:pointer;font-weight:normal;">新增收货地址</a></header>
+        <div>
+          <span>
+            <span style="display:inline-block;border:1px solid #0099ff;width:130px;height:40px;line-height:40px;padding-left:20px;font-weight:bold;">
+              <span>松涛</span>
+              <span style="margin-left:20px;">江苏</span>
+            </span>
+            <span style="margin-left:30px;">松涛</span><span style="margin-left:30px;">江苏省苏州市昆山市学院路828号</span><span style="margin-left:30px;">18550442308</span>
+          </span>
+          <div style="margin-left:23px;">更多地址<img src="./files/img/blue_down_arrow.png" style="margin-left:10px;"></div>
+        </div>
+      </div>
+    </section>
+  </article>
+  <article class="list" style="padding-top:40px;">
+    <header>商品清单</header>
+    <section style="padding-top:15px;">
+      <table style="border:1px solid #ccc;width:970px;font-size:14px;">
+        <tr style="background-color:#ccc;color:white;">
+          <td style="padding-left:20px;">商品</td>
+          <td>单价</td>
+          <td>数量</td>
+        </tr>
+        <tr style="height:120px;">
+          <td style="padding:20px 0 20px 28px;position:relative;">
+            <span style="position:absolute;top:30px;left:130px;">乐扣乐扣马克杯</span>
+          </td>
+          <td>80.00邮宝</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </section>
+  </article>
+  <article class="bill" style="width:970px;">
+    <section style="text-align:right;font-size:17px;font-weight:bold;">
+      <div><span style="">3件商品，总商品金额：</span><span style="margin-left:70px;">80.00邮宝</span></div>
+      <div><span style="">运费：</span><span style="margin-left:80px;">0.00邮宝</span></div>
+      <div><span style="">应付金额：</span><span style="margin-left:70px;">80.00邮宝</span></div>
+    </section>
+  </article>
+  <article style="width:970px;height:80px;background-color:#e4e4e4;border-radius:2px;margin-bottom:40px;position:relative;"><!--2087fc-->
+     <span style="font-size:14px;position:absolute;top:34px;right:290px;font-weight:bold;">应付金额  :</span><span style="color:#ff3300;font-size:25px;position:absolute;top:25px;right:170px;font-weight:bold;">80.00邮宝</span>
+     <button style="background-color:#2087fc;width:130px;height:45px;position:absolute;top:18px;right:30px;border-radius:4px;color:#fff;line-height:45px;font-size:18px;font-weight:bold;border-style:none;">提交订单</button>
+  </article>
+
+</body>
+<script src="./files/js/order_sure.js"></script>
+</html>
