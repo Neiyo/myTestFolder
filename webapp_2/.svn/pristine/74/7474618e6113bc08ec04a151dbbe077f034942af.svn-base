@@ -1,0 +1,28 @@
+/**
+ * Author:
+ * Date: 2016-8-26
+ */
+'use strict';
+
+define([
+    '../services/services',
+    '../directives/indexHeader.Directive',
+    '../directives/recentBill.Directive',
+    '../directives/buttonGroup.Directive'
+], function (res,indexHeaderDirective) {
+    var  IndexController = ['$scope','$rootScope','$http',function($scope,$rootScope,$http) {
+        $scope.title = '你好';
+        $rootScope.title = '再见';
+        var _this = this;
+        $http.get('test.json').success(function(data){
+            //head数据
+            $scope.headInfo = data.head;
+            //bill数据
+            $scope.billInfo = data.bill;
+            console.log($scope.billInfo);
+        });
+        
+    }];
+
+    return IndexController;
+});

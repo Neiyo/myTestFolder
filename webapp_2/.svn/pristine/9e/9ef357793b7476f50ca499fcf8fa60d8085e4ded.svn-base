@@ -1,0 +1,57 @@
+.form-login{
+	max-width: 330px;
+	margin: 140px auto 0;
+	background: #fff;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.form-login h2.form-login-heading {
+	margin: 0;
+	padding: 20px 20px;
+	text-align: center;
+	background: #0e90d2;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+.login-wrap {
+	padding: 20px;
+}
+.login-wrap .registration {
+	text-align: center;
+}
+.login-social-link {
+	display: block;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+.form-group{
+	margin-bottom: 15px;
+}
+.btn-radius{
+	border-radius: 5px !important;
+	-webkit-border-radius: 5px !important;
+}
+.checkbox{
+	position: relative;
+	display: block;
+	min-height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight:400;
+	font-size:13px;
+	text-align:right;
+}
+.am-input-group{margin-bottom:1.2em;}
+.am-form-error .am-input-group-label{
+	color:#dd514c;
+	border-color:#dd514c;
+	background-color: #f2dede;
+}
+.error-text{text-align:center;color:#dd514c;font-size:13px;background-color:#f2dede;padding-bottom:10px;padding-top:10px;border-radius: 5px;display:none;}
+.error-text span{font-weight: bold}
+.error-text a{font-weight: bold}
+.error-style{margin-top: -10px;display: none;}
