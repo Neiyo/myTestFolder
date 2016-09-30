@@ -1,0 +1,19 @@
+define(['app', 'controllers/index', 'controllers/goods', 'controllers/shoppingCart', 'controllers/order'],
+    function (app, index, goods, shoppingCart, order) {
+        return app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+            $routeProvider.when('/', {
+                templateUrl: 'app/templates/index.html',
+                controller: index
+            }).when('/goods', {
+                templateUrl: 'app/templates/goods.html',
+                controller: goods
+            }).when('/shoppingCart', {
+                templateUrl: 'app/templates/shoppingCart.html',
+                controller: shoppingCart
+            }).when('/order', {
+                templateUrl: 'app/templates/order.html',
+                controller: order
+            }).otherwise({redirectTo: '/'});
+            /*  $locationProvider.html5Mode(true);*/
+        }]);
+    });

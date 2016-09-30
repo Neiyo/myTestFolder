@@ -1,0 +1,53 @@
+/**
+ * Created by Administrator on 2016/8/30.
+ */
+define(["app"],function(app){
+    app.factory("OrderService",function($http,AppConfig){
+        var service = {
+            getRecentOrder:function(params,fn){
+                app.httpHelper.get(AppConfig, AppConfig.pages.indexSearch, params, $http, fn);
+            },
+            ToString:function(type,str){
+                if(type == 'status'){
+                    switch (str){
+                        case 0:
+                            str = '未转账';
+                            break;
+                        case 1:
+                            str = '已转账';
+                            break;
+                        case 2:
+                            str = '待收货';
+                            break;
+                        case 3:
+                            str = '已完成';
+                            break;
+                        case 4:
+                            str = '已取消';
+                            break;
+                    }
+                    return str;
+                }
+            }
+        };
+        return service;
+    });
+    // app.orderStatusToString = function(str){
+    //     str = parseInt(str);
+    //     if( str == 0 ){
+    //         return '未转账';
+    //     }
+    //     if( str == 1 ){
+    //         return '已转账';
+    //     }
+    //     if( str == 2 ){
+    //         return '待收货';
+    //     }
+    //     if( str == 3 ){
+    //         return '已完成';
+    //     }
+    //     if( str == 4){
+    //         return '已取消';
+    //     }
+    // }
+})

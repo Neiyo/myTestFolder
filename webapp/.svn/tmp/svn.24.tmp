@@ -1,0 +1,28 @@
+define(['app'], function (app) {
+  function httpHelper(){
+    this.get=function(appConfig,page,params,$http,fun){
+      function errorFun(data, status, headers, config) {
+        console.log(data);
+        console.log(status);
+      }
+      console.log('http',appConfig.isCd);
+      if(appConfig.isCd==1)
+      {
+          var url = appConfig.apiUrl+page+"?jsonp=JSON_CALLBACK";
+          console.log(url);
+          $http.jsonp(url)
+            .success(fun)
+            .error(errorFun);
+      }
+      else
+      {
+        var url = page;
+        $http.get(url)
+            .success(fun)
+            .error(errorFun);
+      }
+    }
+  }
+  
+  app.httpHelper=new httpHelper();
+});

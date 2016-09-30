@@ -1,0 +1,5 @@
+define(['app'],function(app){
+    app.registerController('index',function($scope){
+        $scope.title='hello';
+    });
+});

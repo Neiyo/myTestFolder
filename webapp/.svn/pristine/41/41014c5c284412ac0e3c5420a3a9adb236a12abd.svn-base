@@ -1,0 +1,13 @@
+define(['app'],function(app){
+    app.directive("pageView",function(){
+        return {
+            templateUrl:"./app/templates/dires/pageView.html",
+            restrict:'ECAM',
+            replace:true,
+            controller:function($scope){
+                console.log("11111111111111111111111111");
+                console.log($scope);
+            }
+        }
+    });
+})

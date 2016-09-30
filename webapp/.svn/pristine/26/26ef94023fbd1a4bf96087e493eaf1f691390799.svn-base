@@ -1,0 +1,62 @@
+define(['app',
+    './directives/indexHeader.Directive',
+    './directives/recentBill.Directive',
+    './directives/buttonGroup.Directive'
+], function (app) {
+    /*服务的配置*/
+    app.constant('AppConfig', {
+        page_size: 10,
+        pur_api: 'https://api.douban.com/v2/movie/',
+    });
+
+
+    app.config(function($stateProvider, $urlRouterProvider, $controllerProvider){
+        app.registerController = $controllerProvider.register;
+        app.loadJs = function(js){
+            return function($rootScope, $q){
+                var def = $q.defer(),deps=[];
+                angular.isArray(js) ? (deps = js) : deps.push(js);
+                require(deps,function(){
+                    $rootScope.$apply(function(){
+                        def.resolve();
+                    });
+                });
+                return def.promise;
+            };
+        };
+        $urlRouterProvider.otherwise('/index');
+        $stateProvider.state('index',{
+            url : '/index',
+            templateUrl : 'app/templates/index.html',
+            resolve:{
+                deps:app.loadJs('controllers/index')
+            },
+            controller : 'index'
+        });
+        $stateProvider.state('goods',{
+            url : '/goods',
+            templateUrl : 'app/templates/goods.html',
+            controller : 'goods',
+            resolve:{
+                deps:app.loadJs('controllers/goods')
+            }
+        });
+        $stateProvider.state('order',{
+            url : '/order',
+            templateUrl : 'app/templates/order.html',
+            controller : 'order',
+            resolve:{
+                deps:app.loadJs('controllers/order')
+            }
+        });
+        $stateProvider.state('aa',{
+            url : '/shoppingCart',
+            templateUrl : 'app/templates/shoppingCart.html',
+            controller : 'shoppingCart',
+            resolve:{
+                deps:app.loadJs('controllers/shoppingCart')
+            }
+        });
+    });
+});
+

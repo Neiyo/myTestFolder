@@ -1,0 +1,19 @@
+
+
+define(['app'], function (app) {
+    app.service('ShoppingCart', function($http,$q,AppConfig) {
+        this.name = "ShoppingCart";
+
+        this.getCartCount = function () {
+            var d = $q.defer();
+            app.httpHelper.get(AppConfig, AppConfig.pages.getCartCount, null, $http, function (data) {
+                $scope.pageData = data;
+            });
+            return d.promise;
+        };
+
+    });
+
+});
+
+

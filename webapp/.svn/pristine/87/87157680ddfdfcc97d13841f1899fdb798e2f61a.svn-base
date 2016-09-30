@@ -1,0 +1,11 @@
+<div class="am-margin am-cf">
+    <hr>
+    <p class="am-fl" ng-bind="'共 ' + pageData.rows +' 条记录'"></p>
+    <ol class="am-pagination am-fr">
+        <li ng-click="pageClick(pageData.firstPageNo)" ng-class="{'am-disabled':pageData.pageNo===pageData.firstPageNo}"><a href="javascript:void(0)">«</a>
+        </li>
+        <li ng-click="pageClick(item)" ng-class="{'am-active':pageData.pageNo===item}" ng-repeat="item in pageData.pageNos | orderBy:index"><a
+                href="javascript:void(0)">{{item}}</a></li>
+        <li ng-click="pageClick(pageData.lastPageNo)" ng-class="{'am-disabled':pageData.pageNo===pageData.lastPageNo}"><a href="javascript:void(0)">»</a></li>
+    </ol>
+</div>

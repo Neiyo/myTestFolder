@@ -1,0 +1,41 @@
+define(['app'], function (app) {
+    function httpHelper() {
+        this.get = function (appConfig, page, params, $http, fun) {
+            function successFun(data) {
+                fun(data);
+            }
+
+            function errorFun(data, status, headers, config) {
+                console.log(data);
+                console.log(status);
+            }
+
+            if (appConfig.isCd == 1) {
+                var url = appConfig.apiUrl + page + "?jsonp=JSON_CALLBACK";
+                /*                console.log(url);
+                 $http.jsonp(url)
+                 .success(successFun)
+                 .error(errorFun);*/
+                $http({
+                    method: 'GET',
+                    url: url,
+                    params: params
+                }).success(successFun)
+                    .error(errorFun);
+            }
+            else {
+                var url = page;
+                $http({
+                    method: 'GET',
+                    url: url,
+                    params: params
+                }).success(successFun)
+                    .error(errorFun);
+
+            }
+
+        }
+    }
+
+    app.httpHelper = new httpHelper();
+});

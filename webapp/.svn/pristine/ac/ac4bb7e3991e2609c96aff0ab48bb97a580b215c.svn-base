@@ -1,0 +1,22 @@
+<div class="am-cf am-padding am-padding-bottom-0">
+    <div class="am-fl am-cf">
+        <strong class="am-text-primary am-text-lg">商品</strong> /
+        <small>goods</small>
+    </div>
+</div>
+
+<hr>
+
+<ul class="am-avg-sm-2 am-avg-md-4 am-avg-lg-6 am-margin gallery-list">
+    <li ng-repeat="item in data.list">
+        <a href="#">
+
+            <img class="am-img-thumbnail am-img-bdrs" ng-src="{{proPics(item.goodsInfoImgId)}}" alt="">
+            <div class="gallery-title">{{item.goodsInfoName}}</div>
+            <div class="gallery-desc">2375-09-26</div>
+        </a>
+    </li>
+</ul>
+
+<page-view></page-view>
+

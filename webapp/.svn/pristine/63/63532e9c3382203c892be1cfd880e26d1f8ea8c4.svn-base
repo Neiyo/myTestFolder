@@ -1,0 +1,35 @@
+<div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>一些常用模块</small></div>
+    </div>
+
+    <index-header></index-header>
+    <!--<ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">-->
+        <!--<li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>新增页面<br/>2300</a></li>-->
+        <!--<li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>成交订单<br/>308</a></li>-->
+        <!--<li><a href="#" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>昨日访问<br/>80082</a></li>-->
+        <!--<li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>在线用户<br/>3000</a></li>-->
+    <!--</ul>-->
+    <recent-bill></recent-bill>
+    <div class="am-g">
+        <div class="am-u-md-6">
+            <div class="am-panel am-panel-default">
+                <div class="am-panel-hd am-cf" data-am-collapse="{target: '#collapse-panel-1'}">转账说明<span class="am-icon-chevron-down am-fr" ></span></div>
+                <div class="am-panel-bd am-collapse am-in" id="collapse-panel-1">
+                    <ul class="am-list admin-content-file">
+                        <li>
+                            <strong><span class="am-icon-credit-card"></span> 线下公司转账说明</strong>
+                            <p>1、汇款时请备注订单号，用于保证订单及时核销。</p>
+                            <p>2、汇款时订单号务必填写在【汇款用途】、【附言】、【摘要】等栏内（因不同银行备注不同，最好在所有可填写备注的地方均填写）。</p>
+                            <p>3、一个订单号对应一个订单和金额，请勿多转账或少转账。</p>
+                        </li>
+                        <li>
+                            <strong><span class="am-icon-home"></span> 汇款时请务必核对一下信息</strong>
+                            <p>户名：江苏优生活传媒科技股份有限公司</p>
+                            <p>账户：110 202 351 900 540 3071</p>
+                            <p>开户行：中国工商银行昆山经济技术开发区支行</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

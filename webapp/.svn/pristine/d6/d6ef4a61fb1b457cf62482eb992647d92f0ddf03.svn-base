@@ -1,0 +1,8 @@
+define(['app'],function(app){
+    app.registerController('goods',function($scope,$http,AppConfig){
+        var url = AppConfig.pur_api+"txy/goods/searchList.shtml";
+        $http.jsonp(url).success(function(data){
+            console.log(data);
+        });
+    });
+});

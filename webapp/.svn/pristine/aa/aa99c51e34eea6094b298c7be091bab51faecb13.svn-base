@@ -1,0 +1,34 @@
+<div class="am-g">
+    <div class="am-u-sm-12">
+        <table class="am-table am-table-bd am-table-striped admin-content-table">
+            <thead>
+                <tr>
+                    <th>订单编号</th>
+                    <th>收货人/联系方式</th>
+                    <th>单价/数量</th>
+                    <th>实付金额</th>
+                    <th>订单状态</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="orderInfo in data">
+                    <td>{{orderInfo.orderCode}}</td>
+                    <td>
+                        收货人:{{orderInfo.shippingPerson}}<br/>
+                        联系方式:{{orderInfo.shippingMobile}}
+                    </td>
+                    <td>
+                        {{orderInfo.orderOldPrice}} / {{(orderInfo.orderGoodsList == null) ? 0 : orderInfo.orderGoodsList}}
+                    </td>
+                    <td>
+                        <span class="am-badge am-badge-success">+{{orderInfo.orderPrice}}</span>
+                    </td>
+                    <td>
+                        <span>{{orderInfo.}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--<page-directive for-url="http://192.168.2.231:7100/txy/goods/searchList.shtml?callback=JSON_CALLBACK" for-size="10"></page-directive>-->
+</div>

@@ -1,0 +1,9 @@
+<div class="pagination">
+    <a class="preP">上一页</a>
+    <span class="mainP">
+        <span class="preOmit hidden">...</span>
+        <a ng-repeat="page in $ctrl.pages" ng-click="pageClick()">{{page.index}}</a>
+        <span class="nextOmit hidden">...</span>
+    </span>
+    <a class="nextP">下一页</a>
+</div>

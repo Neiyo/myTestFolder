@@ -1,0 +1,24 @@
+/**
+ * Created by Administrator on 2016/8/26.
+ */
+define([
+    'app',
+    'angular',
+    'services/index'
+], function(app,angular,index) {
+    "use strict";
+    var services = [
+        {
+            name:"indexService",
+            service:index
+        }
+    ];
+
+    services.map(function(){
+
+    });
+
+    var init = function(){
+
+    }
+});

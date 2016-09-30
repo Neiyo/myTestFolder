@@ -1,0 +1,22 @@
+/**
+ * Created by Administrator on 2016/8/27.
+ */
+
+define([
+    'app'
+],function(app){
+    app.directive("recentBill",function(){
+       return {
+           scope:{},
+           replace:false,
+           restrict:'E',
+           templateUrl:"./app/templates/indexDirective/recentBill.template.html",
+           controller:function($scope){
+               $scope.$on("transferData",function(event,data){
+                   console.log('bill',data);
+                   $scope.data = data.bill;
+               })
+           }
+       }
+    });
+});

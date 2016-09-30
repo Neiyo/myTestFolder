@@ -1,0 +1,24 @@
+define(['app'], function (app) {
+    app.registerController('goods', function ($scope, $http, AppConfig,ShoppingCart) {
+        //Processing picture
+        $scope.proPics = function (imgUrl) {
+            imgUrl = imgUrl.replace("!160", "");
+            return imgUrl;
+        }
+        //Unified parameter processing
+        $scope.params = {goodsName: '',pageNo: 1, pageSize: AppConfig.pageConf.pageSize, showPageNo: AppConfig.pageConf.showPageNo};
+
+        $scope.getData = function () {
+            app.httpHelper.get(AppConfig, AppConfig.pages.goodsSearch, $scope.params, $http, function (data) {
+                $scope.pageData = data;
+            });
+        };
+        $scope.getData();
+
+        //cart count
+        $scope.cartCount = ShoppingCart.getCartCount();
+        $scope.addCart=function () {
+
+        }
+    });
+});

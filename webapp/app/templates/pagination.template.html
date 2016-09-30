@@ -1,0 +1,17 @@
+<div class="pagination">
+    <a class="preP">上一页</a>
+    <span class="mainP">
+        <span class="preOmit hidden">...</span>
+        <a ng-repeat="page in $ctrl.totalPages" ng-click="pageClick()">{{page.index}}</a>
+        <span class="nextOmit hidden">...</span>
+    </span>
+    <a class="nextP">下一页</a>
+    <span>
+        每页显示:<input type="text" class="pageSize" />
+        <input type="button" value="确定" class="sizeSubmit">
+    </span>
+    <span>
+        跳转到:<input type="text" class="pageTo" />
+        <input type="button" value="确定" class="pageToSubmit">
+    </span>
+</div>

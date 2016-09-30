@@ -1,0 +1,19 @@
+/**
+ * Created by Administrator on 2016/8/27.
+ */
+define(['app'],function(app){
+    app.directive("indexHeader",function(){
+       return {
+           scope:{},
+           templateUrl:"./app/templates/dires/indexHeader.html",
+           restrict:'E',
+           replace:false,
+           controller:function($scope){
+               $scope.$on("indexHeader",function(event,data){
+                    console.log('head',data);
+                   $scope.data = data;
+               });
+           }
+       }
+    });
+})

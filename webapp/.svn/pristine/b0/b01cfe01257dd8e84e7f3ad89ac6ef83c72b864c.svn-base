@@ -1,0 +1,64 @@
+/**
+ * Created by Administrator on 2016/8/29.
+ */
+define(['app'],function(){
+   app.directive("pageDirective",function(){
+       return {
+           scope:{},
+           replace:false,
+           restrict:'E',
+           templateUrl:"./app/templates/pagination.template.html",
+           controller:function($scope){
+
+           },
+           link:function($scope){
+               var length = $(".mainP a").length;
+               
+               //设置第一页为当前页
+               $(".mainP a:nth-child(1)").addClass("currentP");
+
+               //判断长度 隐藏、显示
+               var handleCP = function(){
+                   $(".currentP").prev().css("display","inline-block");
+                   $(".currentP").prev().prev().css("display","inline-block");
+                   $(".currentP").next().css("display","inline-block");
+                   $(".currentP").next().next().css("display","inline-block");
+               };
+               
+               //提示省略页数
+               var omit = function(){
+                   if( $(".preOmit").next().css("display") == 'inline-block' ){
+                       $(".preOmit").css("display","none");
+                   }
+                   else if( $(".preOmit").next().css("display") == 'none' ){
+                       $(".preOmit").css("display","inline-block");
+                   }
+                   if( $(".nextOmit").prev().css("display") == 'inline-block' ){
+                       $(".preOmit").css("display","none");
+                   }
+                   else if( $(".nextOmit").prev().css("display") == 'none' ){
+                       $(".preOmit").css("display","inline-block");
+                   }
+               };
+
+
+               $(".main a").click(function(){
+                   $(this).setClass("currentP").siblings().removeClass("currentP");
+                   $scope.page = $(this).html();
+                   omit();
+               });
+
+               $scope.$watch("page+size",function($http){
+                   $http.post(url,{
+                       page:page,
+                       size:size
+                   }).success(function(data){
+                       $scope.totalPages = data.totalPages;
+                       $scope.data = data.data;
+                   });
+               });
+
+           }
+       }
+   })
+});

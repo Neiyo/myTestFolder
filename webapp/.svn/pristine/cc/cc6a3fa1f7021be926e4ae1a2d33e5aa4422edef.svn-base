@@ -1,0 +1,16 @@
+/**
+ * Created by root on 16-8-29.
+ */
+
+/*
+.factory('getCartCount',"$http",function($http,AppConfig){
+
+    app.httpHelper.get(AppConfig, AppConfig.goodsSearch, $scope.params, $http, function (data) {
+        $scope.pageData = data;
+    });
+
+    return {
+        message : '共享的数据'
+    };
+})
+*/
